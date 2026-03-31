@@ -12,7 +12,13 @@ def generate_args():
     parser.add_argument('-j', '--workers', default=4, type=int,
                         help="number of data loading workers (default: 4)")
     
-    parser.add_argument('--adata_path', default='/home/wzk/ST_code/NicheTrans/2024_NicheTrans_upload_data/2024_nm_human_lymph_nodes/', type=str)
+    parser.add_argument('--adata_path', default='/mnt/datadisk0/Processed_DATA/2024_nm_human_lymph_nodes/', type=str)
+    parser.add_argument('--cell-type-visualize', action='store_true',
+                        help='generate Scanpy cell-type visualization figures during dataset preparation')
+    parser.add_argument('--cell-type-visualization-dir', default=None, type=str,
+                        help='directory for Scanpy cell-type visualization outputs')
+    parser.add_argument('--cell-type-visualization-dpi', default=150, type=int,
+                        help='dpi used when saving Scanpy cell-type visualization figures')
 
     # Training options
     parser.add_argument('--max-epoch', default=20, type=int,
